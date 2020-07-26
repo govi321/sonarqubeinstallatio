@@ -1,3 +1,67 @@
-Hi this is goverdhan
+                          sonarqube installation
+					
+ sudo  apt install openjdk-8-jre-headless -y
+java -version (it's requried only java 8 )
+cd /opt
+pwd   (right now your in opt)
 
-hi this is vardhan
+apt install wget unzip -y 
+
+   sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.7.zip
+
+
+ls     
+(it will show sonarqube-7.7 zip)
+
+unzip sonarqube-7.7.zip
+
+ls
+sudo adduser sonar
+visudo
+
+root   ALL=ALL      ALL<-----------(in this below line  )
+sonar  ALL=(ALL)      NOPASSWD:ALL  (WRITE IT )  & save it
+
+ls -l
+
+chown -R sonar:sonar /opt/sonarqube-7.7/
+
+ls -l
+
+chmod -R 775 /opt/sonarqube-7.7/
+
+ls -l
+su - sonar
+pwd
+
+cd /opt/sonarqube-7.7
+
+pwd
+ls
+cd bin 
+
+ls
+
+cd linex-x86-64 
+
+pwd 
+
+ls 
+(it will shows sonar.sh)
+
+
+
+./sonar.sh start
+
+
+./sonar.sh status
+
+{go security group given to a poart 9000}
+
+****incase it will not run** 
+
+cd ../../logs/
+
+ls     (then will see the sonar.log) then
+
+cat sonar.log
